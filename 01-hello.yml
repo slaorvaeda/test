@@ -1,0 +1,16 @@
+name: 01 - Hello Workflow
+
+on:
+  push:
+    branches: [main ,master]
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello
+        run: actions/checkout@v4
+
+      - name: Say hello
+        run: echo "Hello, world!"
