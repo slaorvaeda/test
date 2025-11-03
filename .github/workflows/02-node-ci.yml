@@ -1,0 +1,25 @@
+name: 02 - Node CI 
+
+on:
+  push: [main, master]
+  workflow_dispatch:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci || npm i
+
+      - name: Test
+        run: npm test
+
+   
