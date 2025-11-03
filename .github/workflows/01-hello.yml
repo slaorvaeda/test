@@ -2,7 +2,7 @@ name: 01 - Hello Workflow
 
 on:
   push:
-    branches: [main ,master]
+    branches: [ main, master ]
   workflow_dispatch:
 
 jobs:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        run: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Say hello
         run: echo "Hello, world!"
