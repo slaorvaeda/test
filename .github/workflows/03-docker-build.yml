@@ -2,12 +2,12 @@ name: 03 - Docker Build
 
 on:
   push:
-    branches: [main , master]
+    branches: [ main, master ]
   workflow_dispatch:
 
 jobs:
   docker-build:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Setup Buildx
@@ -17,7 +17,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: Dockerfile
           push: false
           tags: local/giga:latest
           
