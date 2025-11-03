@@ -1,7 +1,8 @@
 name: 02 - Node CI 
 
 on:
-  push: [main, master]
+  push:
+    branches: [ main, master ]
   workflow_dispatch:
 
 jobs:
